@@ -1,0 +1,14 @@
+{
+  "country_code": "US",
+  "locale": "en-US",
+  "currency": "USD",
+  "claim_type_default": "Claim",
+  "claim_type_locked": false,
+  "required_documents": {
+    "Property & Equipment": ["Photograph", "Repair Estimate"],
+    "Motor Fleet": ["Photograph", "Police Report"],
+    "General Liability": ["Incident Report"]
+  },
+  "block_submission_until_required_documents_attached": false,
+  "data_residency": { "must_remain_in_region": false, "region": "us-east" }
+}

@@ -1,0 +1,16 @@
+{
+  "dynamic_category": "Vehicle Details",
+  "applies_when": { "product_line": ["Motor", "Motor Fleet"] },
+  "label_token": "fnol.group.vehicle_details",
+  "field_count": 8,
+  "fields": [
+    { "key": "make_model", "type": "text" },
+    { "key": "year", "type": "number" },
+    { "key": "vin", "type": "text" },
+    { "key": "license_plate_number", "type": "text", "pii": true },
+    { "key": "driver_contact", "type": "text", "pii": true },
+    { "key": "owner_contact", "type": "text", "pii": true },
+    { "key": "driver_contact_notes", "type": "textarea" },
+    { "key": "owner_contact_notes", "type": "textarea" }
+  ]
+}

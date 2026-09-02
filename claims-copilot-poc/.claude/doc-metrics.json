@@ -1,0 +1,34 @@
+{
+  "doc": "Architecture.md",
+  "metrics": [
+    {
+      "label": "Database tables",
+      "command": "grep -oE 'CREATE TABLE IF NOT EXISTS [A-Za-z_]+' services/claims-api/app/schema.py | sort -u | wc -l",
+      "note": "match the table name, not the phrase - a comment in schema.py also contains it, so a plain grep -c over-counts"
+    },
+    {
+      "label": "API routers / endpoints",
+      "command": "ls services/claims-api/app/routers/*.py | grep -v __init__ | wc -l; grep -rhoE '@router[.](get|post|put|patch|delete)[(]' services/claims-api/app/routers/*.py | wc -l",
+      "format": "{0} / {1}",
+      "note": "character classes instead of backslash escapes to stay valid JSON"
+    },
+    {
+      "label": "Field registry attributes",
+      "command": "python -c \"import sqlite3;print(sqlite3.connect('services/claims-api/data/poc.sqlite3').execute('SELECT COUNT(*) FROM field_registry').fetchone()[0])\"",
+      "note": "the DB is the source, seeded from seed.py FIELDS. Do NOT count config/field-registry.json - it is vestigial (Architecture.md 8.2)"
+    },
+    {
+      "label": "Backend tests",
+      "command": "cd services/claims-api && python -m pytest --collect-only -q 2>/dev/null | grep -oE '[0-9]+ tests collected' | grep -oE '^[0-9]+'"
+    },
+    {
+      "label": "Locales / translation keys",
+      "command": "ls packages/i18n/locales/*.json | wc -l; python -c \"import json;print(len(json.load(open('packages/i18n/locales/en-US.json'))))\"",
+      "format": "{0} / {1}"
+    },
+    {
+      "label": "MFE screens",
+      "command": "ls -d packages/claims-mfe/src/screens/*/ | wc -l"
+    }
+  ]
+}

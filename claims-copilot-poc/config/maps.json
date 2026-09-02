@@ -1,0 +1,43 @@
+{
+  "_comment": [
+    "Map provider policy. No mapping vendor is named anywhere in the RFP - Exhibit 1",
+    "lists only Loqate (address verification, asterisked). Provider choice is",
+    "therefore an open item for the design phase, which is exactly why it lives in",
+    "configuration rather than in code (NFR-45).",
+    "",
+    "'none' is the default: a schematic plot with zero network egress. It is the only",
+    "safe default while the Privacy Impact Assessment is outstanding, because a loss",
+    "address is Confidential data and loss_address is flagged PII in the field",
+    "registry.",
+    "",
+    "Tile requests always go through the API's own proxy endpoint, never direct from",
+    "the browser. That keeps any subscription key server-side, gives a single",
+    "auditable egress point, and lets residency policy be enforced server-side."
+  ],
+  "provider": "none",
+  "zoom": 15,
+  "providers": {
+    "none": {
+      "kind": "schematic",
+      "attribution": null
+    },
+    "osm": {
+      "kind": "tile",
+      "upstream": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+      "attribution": "© OpenStreetMap contributors",
+      "requires_key": false,
+      "_note": "Development and demonstration only. Not an Aon-approved vendor."
+    },
+    "azure": {
+      "kind": "tile",
+      "upstream": "https://atlas.microsoft.com/map/tile?api-version=2024-04-01&tilesetId=microsoft.base.road&zoom={z}&x={x}&y={y}&subscription-key={key}",
+      "attribution": "© Microsoft, © TomTom",
+      "requires_key": true,
+      "_note": "Enterprise-consistent candidate: Exhibit 1 already standardises on Azure for API Management, Functions, App Service, Service Bus and Blob Storage. Set AZURE_MAPS_KEY to enable."
+    }
+  },
+  "country_overrides": {
+    "AE": "none"
+  },
+  "_country_overrides_note": "AE is forced to schematic because config/countries/AE.json sets data_residency.must_remain_in_region = true (NFR-12)."
+}

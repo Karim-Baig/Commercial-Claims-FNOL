@@ -1,0 +1,8 @@
+{
+  "name": "@poc/i18n",
+  "version": "0.1.0",
+  "private": true,
+  "main": "src/index.tsx",
+  "types": "src/index.tsx",
+  "description": "Resource-bundle localisation. NFR-42 (multilingual incl. RTL), NFR-43 (all user-facing text externalised), NFR-44 (add a locale without code changes)."
+}

@@ -1,0 +1,13 @@
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+pydantic==2.10.4
+PyJWT==2.10.1
+python-dotenv==1.0.1
+httpx==0.28.1
+pytest==8.3.4
+
+# Claims list / claim record export (p. 12, WS1 p. 18, Epic 3 p. 62).
+# Generation is server-side so PII masking cannot be bypassed by the client, which
+# means these are runtime dependencies of the API, not build-time tooling.
+openpyxl==3.1.5
+reportlab==5.0.1

@@ -1,0 +1,12 @@
+{
+  "_comment": "Right-to-left locale, used to evidence NFR-42 without a code change.",
+  "country_code": "AE",
+  "locale": "ar-AE",
+  "text_direction": "rtl",
+  "currency": "AED",
+  "claim_type_default": "Incident",
+  "claim_type_locked": true,
+  "required_documents": { "Property & Equipment": ["Photograph"] },
+  "block_submission_until_required_documents_attached": true,
+  "data_residency": { "must_remain_in_region": true, "region": "me-central" }
+}

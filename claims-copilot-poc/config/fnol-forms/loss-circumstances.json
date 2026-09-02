@@ -1,0 +1,13 @@
+{
+  "dynamic_category": "Loss Circumstances",
+  "applies_when": { "always": true },
+  "label_token": "fnol.group.loss_circumstances",
+  "field_count": 5,
+  "fields": [
+    { "key": "loss_severity", "type": "select", "options": ["Minor", "Moderate", "Severe", "Catastrophic"] },
+    { "key": "weather_conditions", "type": "select", "options_source": "weather_list" },
+    { "key": "area_of_accident", "type": "text" },
+    { "key": "cctv_footage_captured", "type": "radio", "options": ["Yes", "No"] },
+    { "key": "consequence_of_loss", "type": "select", "options_source": "ccp_managed_list" }
+  ]
+}

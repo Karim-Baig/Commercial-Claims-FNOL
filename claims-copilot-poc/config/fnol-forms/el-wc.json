@@ -1,0 +1,10 @@
+{
+  "dynamic_category": "EL / WC",
+  "applies_when": { "product_line": ["Employers Liability", "Workers Compensation", "EL / WC"] },
+  "label_token": "fnol.group.el_wc",
+  "field_count": 1,
+  "fields": [
+    { "key": "employee_job_title", "type": "text", "required": true,
+      "hint": "Job title of the employee at the time of incident" }
+  ]
+}

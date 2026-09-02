@@ -1,0 +1,23 @@
+# Optional. The POC defaults to SQLite so it runs with no infrastructure.
+# Bring this up only when you want to exercise the MySQL path (DB_KIND=mysql),
+# which is the production target per NFR-17 (InnoDB Cluster + Group Replication).
+services:
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: claims_poc
+      MYSQL_USER: claims
+      MYSQL_PASSWORD: claims
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./db/schema.mysql.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+      - mysqldata:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-proot"]
+      interval: 5s
+      retries: 20
+
+volumes:
+  mysqldata:

@@ -1,0 +1,15 @@
+{
+  "dynamic_category": "Property & Equipment",
+  "applies_when": { "product_line": ["Property", "Property & Equipment"] },
+  "label_token": "fnol.group.property_equipment",
+  "field_count": 6,
+  "fields": [
+    { "key": "first_or_third_party", "type": "select", "required": true,
+      "options": ["First Party", "Third Party"] },
+    { "key": "item_name", "type": "text" },
+    { "key": "serial_inventory_number", "type": "text" },
+    { "key": "owner_contact", "type": "text", "pii": true },
+    { "key": "damage_description", "type": "textarea", "max_length": 1000 },
+    { "key": "owner_contact_notes", "type": "textarea" }
+  ]
+}

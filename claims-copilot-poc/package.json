@@ -1,0 +1,26 @@
+{
+  "name": "claims-copilot-poc",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Meridian Claims Copilot Client Experience - Tier 1 POC",
+  "workspaces": [
+    "packages/i18n",
+    "packages/uui-stub",
+    "packages/contracts",
+    "packages/shell",
+    "packages/claims-mfe"
+  ],
+  "scripts": {
+    "dev": "concurrently -n MFE,SHELL -c magenta,cyan \"npm:dev:mfe\" \"npm:dev:shell\"",
+    "dev:mfe": "npm run dev -w @poc/claims-mfe",
+    "dev:shell": "npm run dev -w @poc/shell",
+    "build": "npm run build -w @poc/claims-mfe && npm run build -w @poc/shell",
+    "typecheck": "tsc -b packages/contracts packages/uui-stub"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

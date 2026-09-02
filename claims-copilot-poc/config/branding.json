@@ -1,0 +1,62 @@
+{
+  "_comment": [
+    "Epic 6 (p. 63): client and country-specific branding. Hot-reloadable - the API",
+    "reads this file per request, so a brand change needs no rebuild or deploy (NFR-45).",
+    "",
+    "Resolution order is default -> client -> country. Each layer only overrides the",
+    "keys it names, so a country entry that needs a different timezone does not have to",
+    "restate the whole palette.",
+    "",
+    "Only these presentation tokens are overridable on purpose. Status, semantic and",
+    "text colours are NOT brandable: a client cannot repaint 'Closed' green or lower the",
+    "contrast of body text below the WCAG 2.2 AA floor the design system guarantees."
+  ],
+
+  "default": {
+    "brand_name": "Aon",
+    "product_name": "Meridian Claims Copilot",
+    "logo_text": "AON",
+    "logo_mark": "navy",
+    "primary": "#0F2B5B",
+    "accent": "#E8112D",
+    "header_bg": "#0A1F42",
+    "header_fg": "#FFFFFF",
+    "timezone": "UTC",
+    "timezone_label": "UTC"
+  },
+
+  "clients": {
+    "Hospitality Group Inc.": {
+      "brand_name": "Hospitality Group",
+      "product_name": "Claims Portal",
+      "logo_text": "HG",
+      "primary": "#00655F",
+      "accent": "#A85B00",
+      "header_bg": "#00463F",
+      "header_fg": "#FFFFFF",
+      "timezone": "America/New_York",
+      "timezone_label": "ET"
+    }
+  },
+
+  "countries": {
+    "US": {
+      "timezone": "America/New_York",
+      "timezone_label": "ET"
+    },
+    "GB": {
+      "timezone": "Europe/London",
+      "timezone_label": "UK"
+    },
+    "SG": {
+      "timezone": "Asia/Singapore",
+      "timezone_label": "SGT"
+    },
+    "AE": {
+      "_comment": "RTL market. Warm accent reads correctly against the Arabic type stack.",
+      "accent": "#A85B00",
+      "timezone": "Asia/Dubai",
+      "timezone_label": "GST"
+    }
+  }
+}

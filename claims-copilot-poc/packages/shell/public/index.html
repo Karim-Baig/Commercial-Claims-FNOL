@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Aon Meridian &mdash; Client Portal (POC Shell Simulator)</title>
+    <script>
+      window.__POC_API_URL__ = "<%= API_URL %>";
+    </script>
+    <style>
+      *,*::before,*::after { box-sizing: border-box; }
+      html, body, #root { height: 100%; margin: 0; }
+      body {
+        font-family: "Segoe UI", Inter, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+        background: #F1F4F7;
+        color: #1F2933;
+        -webkit-font-smoothing: antialiased;
+      }
+      /* Visually hidden but available to screen readers (WCAG 2.2 AA). */
+      .sr-only {
+        position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+        overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+      }
+      :focus-visible { outline: 2px solid #0F2B5B; outline-offset: 2px; }
+      /* NFR-42: right-to-left support driven by the document dir attribute. */
+      [dir="rtl"] { direction: rtl; }
+    </style>
+  </head>
+  <body>
+    <a href="#main" class="sr-only">Skip to main content</a>
+    <div id="root"></div>
+  </body>
+</html>

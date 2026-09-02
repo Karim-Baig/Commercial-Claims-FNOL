@@ -1,0 +1,19 @@
+{
+  "_comment": [
+    "Exhibit 5 field attribute model. This file is the human-editable source of truth.",
+    "The API seeds these rows into field_registry on first run.",
+    "Changing show_on_claim_list here and reloading demonstrates NFR-45: authorised",
+    "configuration changes take effect without code modification or deployment."
+  ],
+  "fields": [
+    { "field_key": "aon_claim_id", "label_token": "field.aon_claim_id", "show_on_claim_list": true, "c2s_order": 1, "value_type": "text" },
+    { "field_key": "status", "label_token": "field.status", "show_on_claim_list": true, "c2s_order": 2, "value_type": "status" },
+    { "field_key": "named_insured", "label_token": "field.named_insured", "is_pii": true, "show_on_claim_list": true, "c2s_order": 5, "value_type": "text" },
+    { "field_key": "carrier_policy_number", "label_token": "field.policy_number", "show_on_claim_list": true, "c2s_order": 7, "value_type": "text" },
+    { "field_key": "global_product", "label_token": "field.product_line", "show_on_claim_list": true, "c2s_order": 8, "value_type": "text" },
+    { "field_key": "carrier", "label_token": "field.lead_insurer", "show_on_claim_list": true, "c2s_order": 9, "value_type": "text" },
+    { "field_key": "date_of_loss", "label_token": "field.date_of_loss", "show_on_claim_list": true, "c2s_order": 10, "value_type": "date" },
+    { "field_key": "aon_claim_lead", "label_token": "field.aon_claim_lead", "show_on_claim_list": false, "default_visibility": "hide", "c2s_order": 12, "value_type": "text" },
+    { "field_key": "gross_incurred", "label_token": "field.gross_incurred", "show_on_claim_list": true, "c2s_order": 13, "value_type": "money" }
+  ]
+}

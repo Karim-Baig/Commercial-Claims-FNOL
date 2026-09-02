@@ -1,0 +1,23 @@
+{
+  "dynamic_category": "Litigation",
+  "applies_when": { "product_line": ["Litigation", "General Liability"] },
+  "label_token": "fnol.group.litigation",
+  "field_count": 13,
+  "fields": [
+    { "key": "claimant_name",         "type": "text",     "required": true, "pii": true },
+    { "key": "claimant_attorney",     "type": "text",     "pii": true },
+    { "key": "claimant_attorney_firm","type": "text" },
+    { "key": "date_of_service",       "type": "date" },
+    { "key": "court_jurisdiction",    "type": "text" },
+    { "key": "case_number",           "type": "text" },
+    { "key": "demand_amount",         "type": "number" },
+    { "key": "alleged_injury_type",   "type": "select",
+      "options": ["Bodily Injury", "Property Damage", "Financial Loss", "Reputational", "Other"] },
+    { "key": "alleged_injury_desc",   "type": "textarea", "max_length": 1000 },
+    { "key": "insured_attorney",      "type": "text" },
+    { "key": "insured_attorney_firm", "type": "text" },
+    { "key": "litigation_stage",      "type": "select",
+      "options": ["Pre-litigation", "Suit Filed", "Discovery", "Trial", "Appeal", "Settled"] },
+    { "key": "statute_of_limitations","type": "date" }
+  ]
+}

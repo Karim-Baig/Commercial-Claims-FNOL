@@ -1,0 +1,11 @@
+{
+  "name": "@poc/uui-stub",
+  "version": "0.1.0",
+  "private": true,
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "dependencies": {
+    "@poc/i18n": "*"
+  },
+  "description": "Stand-in for Aon United UI (Meridian Pattern Layer 1). Identical export surface; swap for @aon/united-ui when access is granted."
+}

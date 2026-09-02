@@ -1,0 +1,10 @@
+{
+  "dynamic_category": "Construction",
+  "applies_when": { "product_line": ["Construction", "CAR", "EAR", "Contractors All Risk"] },
+  "label_token": "fnol.group.construction",
+  "field_count": 1,
+  "fields": [
+    { "key": "project_name", "type": "text", "required": true,
+      "hint": "Name or reference of the construction project affected" }
+  ]
+}

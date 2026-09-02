@@ -1,0 +1,10 @@
+{
+  "dynamic_category": "Liability",
+  "applies_when": { "product_line": ["Liability", "Public Liability", "Products Liability"] },
+  "label_token": "fnol.group.liability",
+  "field_count": 1,
+  "fields": [
+    { "key": "liability_type", "type": "select", "required": true,
+      "options": ["Public / General", "Products", "Professional", "Contractual", "Environmental", "Other"] }
+  ]
+}

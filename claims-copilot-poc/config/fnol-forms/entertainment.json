@@ -1,0 +1,15 @@
+{
+  "dynamic_category": "Entertainment",
+  "applies_when": { "product_line": ["Entertainment", "Event Cancellation"] },
+  "label_token": "fnol.group.entertainment",
+  "field_count": 6,
+  "fields": [
+    { "key": "event_name",       "type": "text",     "required": true },
+    { "key": "event_date",       "type": "date",     "required": true },
+    { "key": "event_venue",      "type": "text" },
+    { "key": "cancellation_reason", "type": "select",
+      "options": ["Weather", "Artist / Performer", "Government Order", "Force Majeure", "Technical Failure", "Other"] },
+    { "key": "ticket_revenue_at_risk", "type": "number" },
+    { "key": "rescheduled_date", "type": "date" }
+  ]
+}

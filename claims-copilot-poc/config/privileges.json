@@ -1,0 +1,32 @@
+{
+  "_comment": [
+    "Persona to privilege mapping. Exhibit 5 defines five privilege groups:",
+    "eFNOL, Claim List Visibility, Client Document Privileges, Contacts, Insights.",
+    "Access levels are multi-select with AND logic and may be configured across",
+    "multiple rows per user."
+  ],
+  "access_levels": [
+    "All", "Client Entity", "Geography", "Policies (Product)",
+    "Client Claim Profile", "My Claims"
+  ],
+  "privilege_groups": {
+    "eFNOL": ["claims_fnol", "claims_fnol_direct_to_carrier"],
+    "claim_list_visibility": [
+      "claims_viewer", "claims_edit_if_blank", "claims_upload_docs",
+      "claims_docs", "claims_view_pii", "claims_view_restricted",
+      "claims_export", "claims_view_aon_lead"
+    ],
+    "client_document_privileges": ["claims_doc_library", "claims_doc_upload", "claims_doc_edit"],
+    "contacts": ["claims_contacts_view", "claims_contacts_message"],
+    "insights": ["claims_analytics"]
+  },
+  "personas": {
+    "1": { "role": "C-Suite", "level": "Executive", "access_level": "All" },
+    "2": { "role": "Risk Manager (Client Admin)", "level": "Client administrator", "access_level": "All" },
+    "3": { "role": "Location Manager", "level": "Location manager", "access_level": "Client Claim Profile" },
+    "4": { "role": "Functional Lead", "level": "Functional lead", "access_level": "Client Claim Profile" },
+    "5": { "role": "Manager", "level": "Site manager", "access_level": "Client Claim Profile" },
+    "6": { "role": "Employee / Reporter", "level": "Reporter", "access_level": "My Claims" },
+    "7": { "role": "Unauthorised User", "level": "No entitlement", "access_level": null }
+  }
+}

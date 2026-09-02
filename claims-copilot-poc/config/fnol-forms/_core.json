@@ -1,0 +1,67 @@
+{
+  "_comment": "Exhibit 4 core intake fields, steps 1 to 4b. Always rendered.",
+  "steps": [
+    {
+      "id": "incident",
+      "label": "fnol.step.incident_details",
+      "fields": [
+        { "key": "date_of_loss", "type": "date", "required": true, "no_future": true },
+        { "key": "site_location", "type": "select", "required": true,
+          "options_source": "hierarchy", "note": "Configured ahead; drives policy selection" }
+      ]
+    },
+    {
+      "id": "policy",
+      "label": "fnol.step.policy_selection",
+      "read_only": true,
+      "source": "ODS_OR_CCP",
+      "fields": [
+        { "key": "policy_period", "type": "text", "required": true },
+        { "key": "lead_carrier_name", "type": "text" },
+        { "key": "carrier_policy_number", "type": "text" },
+        { "key": "cover_number", "type": "text" },
+        { "key": "agreement_version", "type": "text" },
+        { "key": "client_name", "type": "text" },
+        { "key": "product_line", "type": "text", "note": "Triggers dynamic groups in step 3" },
+        { "key": "aon_contact_name", "type": "text" },
+        { "key": "aon_contact_email", "type": "text" }
+      ]
+    },
+    {
+      "id": "loss",
+      "label": "fnol.step.loss_details",
+      "fields": [
+        { "key": "named_insured", "type": "text", "pii": true },
+        { "key": "loss_country", "type": "select", "required": true, "options_source": "countries" },
+        { "key": "loss_location", "type": "text" },
+        { "key": "type_of_loss", "type": "radio", "required": true, "options": ["Claim", "Incident"] },
+        { "key": "who_experienced_loss", "type": "select", "required": true,
+          "options": ["1st party", "3rd party", "Both"] },
+        { "key": "loss_description", "type": "textarea", "required": true, "max_length": 2000 },
+        { "key": "cause_of_loss", "type": "select", "required": true,
+          "options_source": "ccp_managed_list", "dynamic_by_product": true },
+        { "key": "claim_currency", "type": "select", "required": true, "options_source": "currencies" },
+        { "key": "initial_reserve", "type": "number" },
+        { "key": "remedial_action_taken", "type": "textarea" },
+        { "key": "client_claim_reference", "type": "text" },
+        { "key": "remark", "type": "textarea" }
+      ]
+    },
+    {
+      "id": "documents",
+      "label": "fnol.step.documents_contacts",
+      "max_file_mb": 100,
+      "allow_camera": true,
+      "contact_fields": [
+        { "key": "contact_email", "type": "email", "required_if_adding": true },
+        { "key": "contact_first_name", "type": "text", "required_if_adding": true, "pii": true },
+        { "key": "contact_last_name", "type": "text", "required_if_adding": true, "pii": true },
+        { "key": "contact_phone", "type": "tel", "pii": true },
+        { "key": "contact_type", "type": "select", "required_if_adding": true },
+        { "key": "can_view_claims", "type": "checkbox", "required_if_adding": true },
+        { "key": "can_modify_claims", "type": "checkbox", "required_if_adding": true },
+        { "key": "include_on_emails", "type": "checkbox", "required_if_adding": true }
+      ]
+    }
+  ]
+}

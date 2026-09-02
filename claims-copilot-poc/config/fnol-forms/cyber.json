@@ -1,0 +1,17 @@
+{
+  "dynamic_category": "Cyber",
+  "applies_when": { "product_line": ["Cyber"] },
+  "label_token": "fnol.group.cyber",
+  "field_count": 9,
+  "fields": [
+    { "key": "ransom_currency", "type": "select", "options_source": "currencies" },
+    { "key": "ransom_demand", "type": "number" },
+    { "key": "ransom_paid", "type": "number" },
+    { "key": "number_of_records_breached", "type": "number" },
+    { "key": "system_outage_start", "type": "datetime" },
+    { "key": "system_outage_end", "type": "datetime" },
+    { "key": "system_fully_restored", "type": "datetime" },
+    { "key": "date_ransom_reimbursement_paid_by_carrier", "type": "date" },
+    { "key": "date_ransom_paid_to_threat_actor", "type": "date" }
+  ]
+}

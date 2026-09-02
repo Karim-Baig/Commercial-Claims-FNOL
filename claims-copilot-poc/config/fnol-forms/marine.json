@@ -1,0 +1,19 @@
+{
+  "dynamic_category": "Marine",
+  "applies_when": { "product_line": ["Marine", "Marine Cargo", "Marine Hull"] },
+  "label_token": "fnol.group.marine",
+  "field_count": 10,
+  "fields": [
+    { "key": "vessel_name",       "type": "text" },
+    { "key": "vessel_flag",       "type": "text" },
+    { "key": "voyage_from",       "type": "text", "required": true },
+    { "key": "voyage_to",         "type": "text", "required": true },
+    { "key": "bill_of_lading",    "type": "text" },
+    { "key": "cargo_description", "type": "textarea", "max_length": 500, "required": true },
+    { "key": "cargo_value",       "type": "number" },
+    { "key": "port_of_incident",  "type": "text" },
+    { "key": "incident_type",     "type": "select",
+      "options": ["Collision", "Grounding", "Fire", "Flooding", "Piracy", "Theft", "Contamination", "Other"] },
+    { "key": "surveyor_appointed","type": "text" }
+  ]
+}
