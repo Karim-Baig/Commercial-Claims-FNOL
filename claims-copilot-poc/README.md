@@ -21,17 +21,27 @@ Three terminals. No Docker required.
 ```bash
 # 1 — API  (seeds SQLite on first run)
 cd services/claims-api
+python -m venv .venv
+
+# activate (macOS / Linux)
+source .venv/bin/activate
+
+# activate (Windows PowerShell)
+# .venv\Scripts\Activate.ps1
+
 pip install -r requirements.txt
 python -m uvicorn app.main:app --reload --port 8000
 
-# 2 — Shell + Micro-Frontend
+# 2 — Shell + Micro-Frontend  (new terminal, repo root)
 npm install
 npm run dev
 
-# 3 — Security evidence
+# 3 — Security evidence  (activate the same .venv first, then)
 cd services/claims-api
 python -m pytest -q
 ```
+
+The `.venv` only needs creating once. Re-activate it (`source .venv/bin/activate` or `.venv\Scripts\Activate.ps1`) each time you open a new terminal for the API or tests.
 
 | Surface | URL |
 |---|---|
